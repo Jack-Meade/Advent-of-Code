@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-PART1 = False if 0 else True
+PART1 = True if 0 else False
 FILENAME = "example.txt" if 0 else "input.txt"
 with open(FILENAME, "r") as file:
     stacks_raw, commands = [], []
@@ -31,9 +31,10 @@ for command in commands:
     crane = []
     for _ in range(num):
         crane.append(stacks[stack_from].pop())
-    if PART1: crane.reverse()
+    if not PART1: crane.reverse()
     stacks[stack_to] += crane
 
+print(f"Part {1 if PART1 else 2}: ", end = "")
 for stack in stacks:
     print(stack[-1], end = "")
 print()

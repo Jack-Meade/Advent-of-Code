@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-PART1 = False if 0 else True
+PART1 = True if 0 else False
 FILENAME = "example.txt" if 0 else "input.txt"
 with open(FILENAME, "r") as file:
     data = file.read().split("\n")
