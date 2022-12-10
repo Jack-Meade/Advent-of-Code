@@ -6,10 +6,7 @@ with open(FILENAME, "r") as file:
     data = file.read()
 
 window = 4 if PART1 else 14
-for i in range(len(data)):
-    chars = i - window
-    if chars < 0: continue
-    
-    if len(set(data[chars:i])) == window:
-        print(i)
+for i in range(window, len(data)):
+    if len(set(data[i - window:i])) == window:
+        print(f"Part {1 if PART1 else 2}:", i)
         break
